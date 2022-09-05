@@ -1,0 +1,47 @@
+apiVersion: redpanda.vectorized.io/v1alpha1
+kind: Cluster
+metadata:
+  name: redpanda-cluster
+spec:
+  image: "vectorized/redpanda"
+  version: "v22.2.2"
+  replicas: 1
+  # uncomment to enable SASL
+  # enableSasl: true
+  # superUsers:
+  #   - username: admin
+  resources:
+    requests:
+      cpu: 1
+      memory: 1.2Gi
+    limits:
+      cpu: 1
+      memory: 1.2Gi
+  configuration:
+    rpcServer:
+      port: 33145
+    kafkaApi:
+    - port: 9092
+      # uncomment to enable TLS
+      # tls:
+      #   enabled: true
+      #   requireClientAuth: true
+    pandaproxyApi:
+    - port: 8082
+      # uncomment to enable TLS
+      # tls:
+      #   enabled: true
+      #   requireClientAuth: true
+    schemaRegistry:
+      port: 8081
+      # uncomment to enable TLS
+      # tls:
+      #   enabled: true
+      #   requireClientAuth: true
+    adminApi:
+    - port: 9644
+      # uncomment to enable TLS
+      # tls:
+      #   enabled: true
+      #   requireClientAuth: true
+    developerMode: true
