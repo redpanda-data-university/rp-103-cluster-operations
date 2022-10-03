@@ -8,8 +8,8 @@ auth:
   sasl:
     enabled: false
     users:
-      - name: admin
-        password: password
+      - name: rp_admin
+        password: furball
 
 # TLS configuration
 tls:
