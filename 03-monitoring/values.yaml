@@ -1,0 +1,41 @@
+# Redpanda parameters
+image:
+  repository: vectorized/redpanda
+  tag: v22.2.2
+
+# Authentication
+auth:
+  sasl:
+    enabled: false
+    users:
+      - name: rp_admin
+        password: furball
+
+# TLS configuration
+tls:
+  enabled: false
+  certs:
+    default:
+      caEnabled: true
+
+# Logging
+logging:
+  logLevel: info
+
+# Resources
+resources:
+  cpu:
+    cores: 1
+  memory:
+    container:
+      max: 2.5Gi
+
+# Persistence
+storage:
+  persistentVolume:
+    enabled: true
+    size: 3Gi
+
+statefulset:
+  # Number of Redpanda brokers
+  replicas: 1

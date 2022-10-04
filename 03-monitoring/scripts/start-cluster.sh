@@ -5,7 +5,7 @@ minikube start
 # make sure we're pointed to the minikube context
 kubectl config use-context minikube
 
-helm repo add redpanda https://charts.vectorized.io/
+helm repo add redpanda https://charts.redpanda.com/
 helm repo add jetstack https://charts.jetstack.io
 helm repo update
 
@@ -21,30 +21,16 @@ helm install \
 # wait until cert-manager has finished rolling out
 kubectl -n cert-manager rollout status -w deployment/cert-manager
 
-# install the Redpanda CRDs
-kubectl apply -k "https://github.com/redpanda-data/redpanda/src/go/k8s/config/crd?ref=$RP_VERSION"
-
-# install the Redpanda Operator
-helm install \
-  redpanda-operator \
-  redpanda/redpanda-operator \
-  --namespace redpanda-system \
-  --create-namespace \
-  --version $RP_VERSION \
-  --debug
+# deploy Redpanda
+helm upgrade redpanda redpanda/redpanda \
+   --install \
+   --namespace redpanda \
+   --create-namespace \
+   --values values.yaml \
+   --debug
 
 # wait for the deployment to complete
-kubectl -n redpanda-system rollout status -w deployment/redpanda-operator
-
-# pre-pull the images for the Redpanda cluster
-docker pull vectorized/configurator:$RP_VERSION
-docker pull vectorized/redpanda:$RP_VERSION
-
-# deploy a Redpanda cluster
-kubectl config set-context --current --namespace=redpanda-system
-cd charts/my-redpanda-cluster
-helm install my-redpanda-cluster .
+kubectl -n redpanda rollout status -w statefulset/redpanda
 
 # set the rpk alias
-alias rpk="kubectl exec -ti redpanda-cluster-0 -n redpanda-system -c redpanda -- rpk"
-
+alias rpk="kubectl exec -ti redpanda-0 -c redpanda -n redpanda -- rpk"
