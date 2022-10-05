@@ -1,5 +1,5 @@
 # Configuring and Securing Redpanda
-In Chapter 1 of the [Hands-on Redpanda: Stream Processing course][course-link], we show you how to:
+In Chapter 1 of the [Hands-on Redpanda: Cluster Operations course][course-link], we show you how to:
 
 
 - Configure cluster and node properties
