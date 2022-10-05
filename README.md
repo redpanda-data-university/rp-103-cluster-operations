@@ -7,10 +7,11 @@ This repository contains code examples for the [Hands-on With Redpanda: Cluster 
 
 - [Configuring and Securing Redpanda][lesson-01]
 - [Road to Production][lesson-02]
-- Testing, Monitoring and Observability
+- [Testing, Monitoring and Observability][lesson-03]
 
 [lesson-01]: /01-config
 [lesson-02]: /02-road-to-production
+[lesson-03]: /03-monitoring
 
 [course-link]: https://university.redpanda.com/courses/hands-on-redpanda-cluster-operations-1
 [rp]: https://redpanda.com/
