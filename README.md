@@ -13,6 +13,6 @@ This repository contains code examples for the [Hands-on With Redpanda: Cluster 
 [lesson-02]: /02-road-to-production
 [lesson-03]: /03-monitoring
 
-[course-link]: https://university.redpanda.com/courses/hands-on-redpanda-cluster-operations-1
+[course-link]: https://university.redpanda.com/courses/hands-on-redpanda-cluster-operations
 [rp]: https://redpanda.com/
 [rpu]: https://university.redpanda.com/
