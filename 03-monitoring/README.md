@@ -8,4 +8,4 @@ In Chapter 3 of the [Hands-on Redpanda: Cluster Operations course][course-link],
 
 The full tutorial is contained in the [course][course-link].
 
-[course-link]: https://university.redpanda.com/courses/hands-on-redpanda-cluster-operations-1
+[course-link]: https://university.redpanda.com/courses/hands-on-redpanda-cluster-operations
