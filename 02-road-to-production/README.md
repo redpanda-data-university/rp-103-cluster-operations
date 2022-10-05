@@ -1,5 +1,5 @@
 # Road to Production
-In Chapter 2 of the [Hands-on Redpanda: Stream Processing course][course-link], we show you how to:
+In Chapter 2 of the [Hands-on Redpanda: Cluster Operations course][course-link], we show you how to:
 
 
 - Deploy Redpanda to Kubernetes (either to Minikube or Google Cloud Platform)
