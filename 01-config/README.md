@@ -13,4 +13,4 @@ docker-compose up -d
 ```
 
 
-[course-link]: https://university.redpanda.com/courses/hands-on-redpanda-cluster-operations-1
+[course-link]: https://university.redpanda.com/courses/hands-on-redpanda-cluster-operations
