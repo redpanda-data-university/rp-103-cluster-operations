@@ -1,4 +1,4 @@
-export RP_VERSION=v22.2.2
+export RP_VERSION=v23.1.7
 
 minikube start
 
