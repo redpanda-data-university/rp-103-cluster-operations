@@ -32,7 +32,7 @@ services:
       - 28082:28082
       - 29092:29092
   redpanda-2:
-    image: docker.redpanda.com/vectorized/redpanda:v22.2.2
+    image: docker.redpanda.com/vectorized/redpanda:v23.1.7
     container_name: redpanda-2
     command:
       - redpanda
