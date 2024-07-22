@@ -1,0 +1,12 @@
+redpanda:
+    seed_servers:
+        - host:
+            address: redpanda-0
+            port: 33145
+        - host:
+            address: redpanda-3
+            port: 33145
+        - host:
+            address: redpanda-4
+            port: 33145
+

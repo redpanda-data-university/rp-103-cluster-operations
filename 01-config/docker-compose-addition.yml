@@ -62,6 +62,8 @@ services:
       - redpanda-4:/var/lib/redpanda/data
     networks:
       - redpanda_network
+    depends_on:
+      - redpanda-3
     ports:
       - 58081:58081
       - 58082:58082
