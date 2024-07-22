@@ -83,7 +83,7 @@ services:
       - --mode dev-container
       - --smp 1
       - --default-log-level=info
-      - --seeds redpanda-0:33145
+      - --seeds redpanda-0:33145,redpanda-1:33145
     image: docker.redpanda.com/redpandadata/redpanda:v24.1.10
     container_name: redpanda-2
     volumes:
@@ -96,7 +96,7 @@ services:
       - 39092:39092
       - 39644:9644
     depends_on:
-      - redpanda-0
+      - redpanda-1
   console:
     container_name: redpanda-console
     image: docker.redpanda.com/redpandadata/console:v2.6.1
