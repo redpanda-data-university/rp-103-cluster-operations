@@ -33,7 +33,8 @@ services:
     image: docker.redpanda.com/redpandadata/redpanda:v24.1.10
     container_name: redpanda-0
     volumes:
-      - redpanda-0:/var/lib/redpanda/data
+      - ./redpanda-config/redpanda-0:/etc/redpanda
+      - ./redpanda-data/redpanda-0:/var/lib/redpanda/data
     networks:
       - redpanda_network
     ports:
@@ -59,7 +60,8 @@ services:
     image: docker.redpanda.com/redpandadata/redpanda:v24.1.10
     container_name: redpanda-1
     volumes:
-      - redpanda-1:/var/lib/redpanda/data
+      - ./redpanda-config/redpanda-1:/etc/redpanda
+      - ./redpanda-data/redpanda-1:/var/lib/redpanda/data
     networks:
       - redpanda_network
     ports:
@@ -87,7 +89,8 @@ services:
     image: docker.redpanda.com/redpandadata/redpanda:v24.1.10
     container_name: redpanda-2
     volumes:
-      - redpanda-2:/var/lib/redpanda/data
+      - ./redpanda-config/redpanda-2:/etc/redpanda
+      - ./redpanda-data/redpanda-2:/var/lib/redpanda/data
     networks:
       - redpanda_network
     ports:

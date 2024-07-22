@@ -29,10 +29,12 @@ services:
       # Tells Seastar (the framework Redpanda uses under the hood) to use 1 core on the system.
       - --smp 1
       - --default-log-level=info
+      - --seeds redpanda-0:33145
     image: docker.redpanda.com/redpandadata/redpanda:v24.1.10
     container_name: redpanda-3
     volumes:
-      - redpanda-3:/var/lib/redpanda/data
+      - ./redpanda-config/redpanda-3:/etc/redpanda
+      - ./redpanda-data/redpanda-3:/var/lib/redpanda/data
     networks:
       - redpanda_network
     ports:
@@ -51,13 +53,15 @@ services:
       - --schema-registry-addr internal://0.0.0.0:8081,external://0.0.0.0:58081
       - --rpc-addr redpanda-4:33145
       - --advertise-rpc-addr redpanda-4:33145
+      - --seeds redpanda-0:33145
       - --mode dev-container
       - --smp 1
       - --default-log-level=info
     image: docker.redpanda.com/redpandadata/redpanda:v24.1.10
     container_name: redpanda-4
     volumes:
-      - redpanda-4:/var/lib/redpanda/data
+      - ./redpanda-config/redpanda-4:/etc/redpanda
+      - ./redpanda-data/redpanda-4:/var/lib/redpanda/data
     networks:
       - redpanda_network
     ports:
