@@ -1,4 +1,7 @@
 version: '3.7'
+networks:
+  redpanda_network:
+    driver: bridge
 services:
   prometheus:
     image: prom/prometheus
