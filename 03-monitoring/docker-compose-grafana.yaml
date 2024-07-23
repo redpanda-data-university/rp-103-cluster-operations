@@ -1,0 +1,21 @@
+version: '3.7'
+networks:
+  redpanda_network:
+    driver: bridge
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    environment:
+      - "GF_AUTH_ANONYMOUS_ENABLED=true"
+      - "GF_AUTH_ANONYMOUS_ORG_ROLE=Admin"
+      - "GF_AUTH_ANONYMOUS_HIDE_VERSION=true"
+    user: '0'
+    volumes:
+      - "./config/grafana/grafana.ini:/etc/grafana/grafana.ini"
+      - "./config/grafana/provisioning:/etc/grafana/provisioning"
+      - "$PWD/grafana-data:/var/lib/grafana"
+      #- "./grafana-dashboards:/var/lib/grafana/dashboards"
+    ports: [ "3000:3000" ]
+    networks:
+      - redpanda_network
