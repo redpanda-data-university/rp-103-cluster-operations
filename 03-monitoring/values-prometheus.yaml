@@ -1,7 +1,0 @@
-extraScrapeConfigs: |
-  - job_name: redpanda
-    static_configs:
-      - targets:
-          - redpanda-0.redpanda.redpanda.svc.cluster.local.:9644
-    metrics_path: /public_metrics
-
