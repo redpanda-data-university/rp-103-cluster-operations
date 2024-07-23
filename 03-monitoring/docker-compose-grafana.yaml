@@ -12,7 +12,6 @@ services:
       - "GF_AUTH_ANONYMOUS_HIDE_VERSION=true"
     user: '0'
     volumes:
-      - "./config/grafana/grafana.ini:/etc/grafana/grafana.ini"
       - "./config/grafana/provisioning:/etc/grafana/provisioning"
       - "$PWD/grafana-data:/var/lib/grafana"
       #- "./grafana-dashboards:/var/lib/grafana/dashboards"
