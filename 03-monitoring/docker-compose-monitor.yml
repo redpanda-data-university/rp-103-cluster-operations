@@ -11,8 +11,6 @@ services:
     image: cnfldemos/cp-server-connect-datagen:0.5.0-6.2.0
     hostname: connect
     container_name: connect
-    depends_on:
-      - redpanda0
     ports:
       - "8085:8085"
       - "9010:9010"
@@ -46,6 +44,4 @@ services:
       - SHOP_KAFKA_TOPICREPLICATIONFACTOR=1
       - SHOP_TRAFFIC_INTERVAL_RATE=1
       - SHOP_TRAFFIC_INTERVAL_DURATION=0.1s
-    depends_on:
-      - redpanda0
 
